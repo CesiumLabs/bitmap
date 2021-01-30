@@ -30,8 +30,8 @@ export function Encoder(imgData: imageData, quality?: number): imageData {
  * Bitmap Decoder
  * @param bmpData Bitmap data
  */
-export function Decoder(bmpData: Buffer): BitmapDecoder {
-    return new BitmapDecoder(bmpData);
+export function Decoder(bmpData: Buffer | Uint8Array | ArrayBuffer | SharedArrayBuffer): BitmapDecoder {
+    return new BitmapDecoder(Buffer.from(bmpData));
 }
 
 export {
